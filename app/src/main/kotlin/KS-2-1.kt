@@ -6,8 +6,9 @@ fun main() {
     val studPoint2 = 4.0
     val studPoint3 = 3.0
     val studPoint4 = 5.0
+    val studCount = 4
 
-    val averageMark = (studPoint1 + studPoint2 + studPoint3 + studPoint4) / 4
+    val averageMark = (studPoint1 + studPoint2 + studPoint3 + studPoint4) / studCount
     println(String.format("%.2f", averageMark))
 
 }
