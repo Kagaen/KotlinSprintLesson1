@@ -8,6 +8,6 @@ fun main() {
     val perceptionRate = 16.7
     val depositPeriod = 20.0
 
-    println("%.3f".format((deposit * (1 + perceptionRate / 100).pow(depositPeriod))))
+    println("%.3f".format(deposit * (1 + perceptionRate / 100).pow(depositPeriod)))
 
 }
