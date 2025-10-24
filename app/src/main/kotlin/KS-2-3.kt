@@ -8,8 +8,9 @@ fun main() {
     val departureMin = 39
     val roadMin = 457
 
-    val arrivalMin = (departureMin + departureHour * MIN_IN_HOUR + roadMin) % MIN_IN_HOUR
-    val arrivalHour = (departureMin + departureHour * MIN_IN_HOUR + roadMin) / MIN_IN_HOUR
+    val arrival = departureHour * MIN_IN_HOUR + departureMin + roadMin
+    val arrivalMin = arrival % MIN_IN_HOUR
+    val arrivalHour = arrival / MIN_IN_HOUR
 
     println("Arrival time - ${"%02d".format(arrivalHour)}:${"%02d".format(arrivalMin)}")
 
