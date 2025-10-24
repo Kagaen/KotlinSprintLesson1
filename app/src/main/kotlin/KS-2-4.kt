@@ -2,11 +2,11 @@ package org.example.app
 
 fun main() {
 
-    val krystalOreValue = 7
-    val ironOreValue = 11
-    val buff = 1.2
+    val krystalOreValue = 7.0
+    val ironOreValue = 11.0
+    val buff = 20
 
-    println("Bonus krystal ore - ${"%.0f".format(krystalOreValue * buff - krystalOreValue)} ")
-    println("Bonus iron ore - ${"%.0f".format(ironOreValue * buff - ironOreValue)} ")
+    println("Bonus krystal ore - ${(krystalOreValue / 100 * buff).toInt()}")
+    println("Bonus iron ore - ${(ironOreValue / 100 * buff).toInt()}")
 
 }
