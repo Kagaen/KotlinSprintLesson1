@@ -1,5 +1,3 @@
-package org.example.app
-
 import kotlin.math.pow
 
 fun main() {
