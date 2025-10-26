@@ -1,4 +1,3 @@
-package org.example.app
 
 const val SEC_IN_MIN = 60
 const val SEC_IN_HOUR = 3600
