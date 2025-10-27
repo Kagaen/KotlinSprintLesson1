@@ -1,3 +1,8 @@
+const val SUNLIGHT = true
+const val OPEN_TENT = true
+const val AIR_HUMIDITY = 20
+const val WINTER = false
+
 fun main() {
 
     val sunlight = true
@@ -7,7 +12,7 @@ fun main() {
 
     println(
         "Are the conditions favorable for legume growth now? - " +
-                "${sunlight == true && openTent == true && airHumidity == 20 && winter == false}"
+                "${sunlight == SUNLIGHT && openTent == OPEN_TENT && airHumidity == AIR_HUMIDITY && winter == WINTER}"
     )
 
 }
