@@ -1,3 +1,9 @@
+const val DAMAGE = false
+const val MIN_CREW = 55
+const val MAX_CREW = 70
+const val MIN_PROVISION_CRATES = 50
+const val GOOD_WEATHER = true
+
 fun main() {
 
     print("Damage: ")
@@ -10,7 +16,8 @@ fun main() {
     val goodWeather = readln().toBoolean()
 
     val readiness =
-        ((damage == false) && (crew in (55..70)) && (provisionBox > 50)) || ((damage == true) && (crew == 70) && (provisionBox >= 50) && (goodWeather == true))
+        ((damage == DAMAGE) && (crew in MIN_CREW..MAX_CREW) && (provisionBox > MIN_PROVISION_CRATES))
+                || ((damage == !DAMAGE) && (crew == MAX_CREW) && (provisionBox >= MIN_PROVISION_CRATES) && (goodWeather == GOOD_WEATHER))
 
     println("Readiness of the ship: $readiness")
 
