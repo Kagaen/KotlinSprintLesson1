@@ -1,7 +1,7 @@
 import java.util.Locale
 import kotlin.math.pow
 
-const val KM_EDGE = 100
+const val CM_IN_M = 100
 const val UNDERWEIGHT = 18.5
 const val NORMAL_WEIGHT = 25
 const val OVERWEIGHT = 30
@@ -9,7 +9,7 @@ const val OVERWEIGHT = 30
 fun main() {
 
     print("Your height in cm: ")
-    val height = readln().toDouble() / KM_EDGE
+    val height = readln().toDouble() / CM_IN_M
     print("Your weight in kg: ")
     val weight = readln().toDouble()
     val bmi = weight / height.pow(2)
