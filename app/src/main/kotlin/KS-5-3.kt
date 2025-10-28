@@ -8,9 +8,13 @@ fun main() {
     val userSecondNum = readln().toIntOrNull()
 
     println(
-        if ((userFirstNum == firstNumber) && (userSecondNum == secondNumber) || (userFirstNum == secondNumber) && (userSecondNum == firstNumber)) {
+        if ((userFirstNum == firstNumber && userSecondNum == secondNumber) ||
+            (userFirstNum == secondNumber && userSecondNum == firstNumber)
+        ) {
             "Congratulations! You've won the grand prize!"
-        } else if ((userFirstNum != firstNumber) && (userSecondNum != secondNumber) && (userFirstNum != secondNumber) && (userSecondNum != firstNumber)) {
+        } else if ((userFirstNum != firstNumber) && (userSecondNum != secondNumber) &&
+            (userFirstNum != secondNumber) && (userSecondNum != firstNumber)
+        ) {
             "Bad Luck!"
         } else "You've won a consolation prize!"
     )
