@@ -6,7 +6,7 @@ fun main() {
     val tablesResTomorrow = 13
     println(
         "Availability of tables for today: ${tablesResToday < TABLES}\n" +
-                "Availability of tables for today: ${tablesResTomorrow < TABLES}"
+                "Availability of tables for tomorrow: ${tablesResTomorrow < TABLES}"
     )
 
 }
