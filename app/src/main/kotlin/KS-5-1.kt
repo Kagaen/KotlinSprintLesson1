@@ -1,14 +1,12 @@
-import kotlin.random.Random
-
 fun main() {
 
-    val a = Random.nextInt(1, 10)
-    val b = Random.nextInt(1, 10)
+    val number1 = (0..10).random()
+    val number2 = (0..10).random()
 
-    print("Enter the result: $a + $b = ")
+    print("Enter the result: $number1 + $number2 = ")
     val userRes = readln().toInt()
 
-    if ( a + b == userRes) {
+    if (number1 + number2 == userRes) {
         println("Welcome")
     } else {
         println("Access is denied")
