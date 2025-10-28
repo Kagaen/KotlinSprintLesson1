@@ -1,3 +1,5 @@
+const val KM_LIMIT = 100
+
 fun main() {
 
     print("Distance in km: ")
@@ -7,9 +9,12 @@ fun main() {
     print("Price per liter: ")
     val price = readln().toDouble()
 
-    val literCount = (distance * consumption) / 100
+    val literCount = (distance * consumption) / KM_LIMIT
     val cost = literCount * price
 
-    println("Cost of the travel: ${"%.2f".format(cost)}\n" + "Need liters: ${"%.2f".format(literCount)}")
+    println(
+        "Cost of the travel: ${"%.2f".format(cost)}\n" +
+                "Need liters: ${"%.2f".format(literCount)}"
+    )
 
 }
