@@ -1,3 +1,4 @@
+import java.util.Locale
 import kotlin.math.pow
 
 fun main() {
@@ -7,12 +8,13 @@ fun main() {
     print("Your weight in kg: ")
     val weight = readln().toDouble()
     val bmi = weight / height.pow(2)
+    val niceBmi = String.format(Locale.UK, "%.2f", bmi)
 
     when {
-        bmi < 18.5 -> println("BMI = ${"%.2f".format(bmi)}, underweight ")
-        (bmi >= 18.5) && (bmi < 25) -> println("BMI = ${"%.2f".format(bmi)}, normal body weight")
-        (bmi >= 25) && (bmi < 30) -> println("BMI = ${"%.2f".format(bmi)}, overweight")
-        bmi >= 30 -> println("BMI = ${"%.2f".format(bmi)}, obese")
+        bmi < 18.5 -> println("BMI = $niceBmi, underweight ")
+        (bmi >= 18.5) && (bmi < 25) -> println("BMI = $niceBmi, normal body weight")
+        (bmi >= 25) && (bmi < 30) -> println("BMI = $niceBmi, overweight")
+        bmi >= 30 -> println("BMI = $niceBmi, obese")
     }
 
 }
