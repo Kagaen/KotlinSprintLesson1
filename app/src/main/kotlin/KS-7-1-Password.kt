@@ -1,10 +1,15 @@
+const val PASSWORD_SIZE = 6
+
 fun main() {
 
     var password = ""
-    for (i in 1..6) {
+    val charRange = 'a'..'z'
+    val intRange = 0..9
+
+    for (i in 1..PASSWORD_SIZE) {
         password += if (i % 2 == 1) {
-            ('a'..'z').random()
-        } else (0..9).random()
+            charRange.random()
+        } else intRange.random()
     }
     println(password)
 
