@@ -4,13 +4,11 @@ fun main() {
     println(salad.joinToString(", ","[", "]"))
 
     print("Найти ингредиент: ")
-    val find = readln().trim()
-    val exist = find in salad
+    val findIndex = salad.indexOf(readln().trim())
 
-    if (exist) {
+    if (findIndex != -1) {
         println("Чем заменить?")
-        val replace = readln().trim()
-        salad[salad.indexOf(find)] = replace
+        salad[findIndex] = readln().trim()
         println("Готово! Вы сохранили следующий список: ${salad.joinToString(", ","[", "]")}")
     }
     else println("Такого ингредиента в рецепте нет")
