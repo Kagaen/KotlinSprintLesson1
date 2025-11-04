@@ -1,20 +1,25 @@
+const val MIN_SIZE = 6
+
 fun main() {
 
-    var password = ""
+    val password = mutableListOf<Char>()
+    val chars = ('0'..'9') + ('a'..'z') + ('A'..'Z')
     var length: Int
+
     do {
         print("Password length at least 6 characters: ")
         length = readln().toInt()
-    } while (length < 6)
+    } while (length < MIN_SIZE)
 
-    for (i in 1..length) {
-        val checker = (0..2).random()
-        when (checker) {
-            0 -> password += (0..9).random()
-            1 -> password += ('a'..'z').random()
-            2 -> password += ('A'..'Z').random()
-        }
+    password.add(('0'..'9').random())
+    password.add(('a'..'z').random())
+    password.add(('A'..'Z').random())
+
+    for (i in 3 until length) {
+        password.add(chars.random())
     }
-    println(password)
+
+    password.shuffle()
+    println(password.joinToString(""))
 
 }
