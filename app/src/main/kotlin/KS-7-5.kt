@@ -3,7 +3,10 @@ const val MIN_SIZE = 6
 fun main() {
 
     val password = mutableListOf<Char>()
-    val chars = ('0'..'9') + ('a'..'z') + ('A'..'Z')
+    val digits = ('0'..'9')
+    val loverCaseChars = ('a'..'z')
+    val upperCaseChars = ('A'..'Z')
+    val chars = digits + loverCaseChars + upperCaseChars
     var length: Int
 
     do {
@@ -11,9 +14,9 @@ fun main() {
         length = readln().toInt()
     } while (length < MIN_SIZE)
 
-    password.add(('0'..'9').random())
-    password.add(('a'..'z').random())
-    password.add(('A'..'Z').random())
+    password.add(digits.random())
+    password.add(loverCaseChars.random())
+    password.add(upperCaseChars.random())
 
     for (i in 3 until length) {
         password.add(chars.random())
