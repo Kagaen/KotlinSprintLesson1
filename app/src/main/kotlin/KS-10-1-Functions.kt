@@ -1,8 +1,8 @@
 fun main() {
 
-    val machineRoll = roll()
+    val machineRoll = rolldice()
     println("Machine turn: $machineRoll")
-    val humanRoll = roll()
+    val humanRoll = rolldice()
     println("Human turn: $humanRoll")
     println(
         when {
@@ -14,6 +14,6 @@ fun main() {
 
 }
 
-fun roll(): Int {
+fun rolldice(): Int {
     return (1..6).random()
 }
