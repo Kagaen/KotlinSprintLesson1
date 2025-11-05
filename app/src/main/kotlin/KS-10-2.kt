@@ -2,14 +2,14 @@ fun main() {
 
     do {
         print("Login: ")
-        val validLogin = validation(readln())
+        val validLogin = validate(readln())
         print("Password: ")
-        val validPassword = validation(readln())
+        val validPassword = validate(readln())
         if (!validLogin || !validPassword) println("Login or password is too short\n")
         else println("good")
     } while (!validLogin || !validPassword)
 
 }
 
-fun validation(str: String): Boolean = (str.length >= 4)
+fun validate(str: String): Boolean = (str.length >= 4)
 
