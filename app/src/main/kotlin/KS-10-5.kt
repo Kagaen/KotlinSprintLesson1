@@ -7,16 +7,19 @@ fun main() {
     val login = readln().trim().lowercase()
     print("Пароль: ")
     val password = readln()
-    println(stash(tokenGen(login, password)))
+    println(stash(auth(login, password)))
 }
 
-fun tokenGen(log: String?, pas: String?): String? {
+fun tokenGen(): String {
     val digits = ('0'..'9')
     val lowerCaseChars = ('a'..'z')
     val upperCaseChars = ('A'..'Z')
     val chars = digits + lowerCaseChars + upperCaseChars
-    return if ((log == KS_LOGIN) && (pas == KS_PASSWORD))
-        (1..TOKEN_SIZE).map { chars.random() }.joinToString("")
+    return (1..TOKEN_SIZE).map { chars.random() }.joinToString("")
+}
+
+fun auth(log: String?, pas: String?): String? {
+    return if ((log == KS_LOGIN) && (pas == KS_PASSWORD)) tokenGen()
     else null
 }
 
