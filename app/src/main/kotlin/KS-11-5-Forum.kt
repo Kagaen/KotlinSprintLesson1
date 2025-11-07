@@ -5,7 +5,7 @@ class Forum() {
     fun printTread() {
         for ((id, message) in forumChat) {
             val memberName = members[id]
-            if (memberName != null) println("$memberName: $message")
+            println("$memberName: $message")
         }
     }
 }
