@@ -8,24 +8,19 @@ class Forum() {
             println("$memberName: $message")
         }
     }
-}
 
-class ForumMember() {
-    class Builder(val forum: Forum) {
+    class ForumMember(val forum: Forum) {
         var userId = 0
         var userName = ""
-        fun createNewUser(name: String): Builder {
+        fun createNewUser(name: String) {
             userId = forum.members.keys.maxOrNull() ?: 0
-            userId +=  1
+            userId += 1
             userName = name
             forum.members[userId] = userName
-            return this
         }
     }
-}
 
-class ForumMessage() {
-    class Builder(val forum: Forum) {
+    class ForumMessage(val forum: Forum) {
         var authorId = 0
         var authorMessage = ""
         fun createMessage(id: Int, message: String) {
@@ -41,14 +36,13 @@ class ForumMessage() {
 fun main() {
 
     val greatForum = Forum()
-    val firsMember = ForumMember.Builder(greatForum).createNewUser("The chosen one")
-    val secondMember = ForumMember.Builder(greatForum).createNewUser("The chosen two")
+    val firsMember = Forum.ForumMember(greatForum).createNewUser("The chosen one")
+    val secondMember = Forum.ForumMember(greatForum).createNewUser("The chosen two")
 
-    val message1 = ForumMessage.Builder(greatForum).createMessage(2, "Oh, Hello!")
-    val message2 = ForumMessage.Builder(greatForum).createMessage(1, "Здарова, коль не шутишь")
-    val message3 = ForumMessage.Builder(greatForum).createMessage(3, "Где Я?")
+    val message1 = Forum.ForumMessage(greatForum).createMessage(2, "Oh, Hello!")
+    val message2 = Forum.ForumMessage(greatForum).createMessage(1, "Здарова, коль не шутишь")
+    val message3 = Forum.ForumMessage(greatForum).createMessage(3, "Где Я?")
 
     greatForum.printTread()
-
 
 }
