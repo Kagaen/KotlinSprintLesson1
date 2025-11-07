@@ -26,15 +26,17 @@ fun main() {
 class Room(
     val cover: Int,
     val name: String,
-    val listOfMembers: MutableList<String> = mutableListOf(),
+    val listOfMembers: MutableList<Member> = mutableListOf(),
     val status: List<String> = listOf("Speak", "Mute", "Micro is off"),
 ) {
     fun addMember(member: Member) {
-        listOfMembers.add(member.name)
+        if (!listOfMembers.contains(member))
+        listOfMembers.add(member)
     }
 
     fun showMembers() {
-        println("Members of the room1: ${listOfMembers.joinToString(", ")}")
+        val text = listOfMembers.joinToString(", ") {it.name}
+        println("Members of the ${name}: $text")
     }
 
     fun changeStatus(member: Member, statusIndex: Int) {
