@@ -1,12 +1,12 @@
 class Recipe(
     val id: Int,
     var recipeName: String,
-    var ingredients: MutableList<String>,
+    var ingredients: MutableList<Ingredient>,
     var ingredientsNumber: MutableList<Int>,
     val category: String,
     var inFavorites: Boolean = false,
 ) {
-    fun addIngredient(name: String, count: Int) {
+    fun addIngredient(name: Ingredient, count: Int) {
         ingredients.add(name)
         ingredientsNumber.add(count)
     }
@@ -33,10 +33,9 @@ class Ingredient(
 
 class Category(
     val nameCategory: String,
-    val recipes: MutableList<String>,
-    val recipesId: MutableList<Int>,
+    val recipes: MutableList<Recipe>,
 ) {
-    fun addRecipe(name: String) {
+    fun addRecipe(name: Recipe) {
         recipes.add(name)
     }
 }
