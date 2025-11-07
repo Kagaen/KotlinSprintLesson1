@@ -34,9 +34,15 @@ class Ingredient(
 class Category(
     val nameCategory: String,
     val recipes: MutableList<String>,
+    val recipesId: MutableList<Int>,
 ) {
     fun addRecipe(name: String) {
         recipes.add(name)
     }
 }
+
+class Favorites(
+    val recipes: MutableList<String>,
+    val recipesId: MutableList<Int>,
+    )
 
