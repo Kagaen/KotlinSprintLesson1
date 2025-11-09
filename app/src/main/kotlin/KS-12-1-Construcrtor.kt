@@ -1,4 +1,4 @@
-class Weather constructor() {
+class Weather01 constructor() {
     var dayTemp = 35
     var nightTemp = -10
     var rainfall = false
@@ -10,7 +10,7 @@ class Weather constructor() {
 
 fun main() {
 
-    val day1 = Weather()
+    val day1 = Weather01()
     day1.showWeather()
     day1.dayTemp = 20
     day1.nightTemp = -5
