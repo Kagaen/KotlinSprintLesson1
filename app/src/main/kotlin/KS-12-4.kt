@@ -1,4 +1,4 @@
-class Weather constructor(_dayTemp: Int, _nightTemp: Int, _rainfall: Boolean) {
+class Weather04 (_dayTemp: Int, _nightTemp: Int, _rainfall: Boolean) {
     var dayTemp = _dayTemp
     var nightTemp = _nightTemp
     var rainfall = _rainfall
@@ -11,6 +11,6 @@ class Weather constructor(_dayTemp: Int, _nightTemp: Int, _rainfall: Boolean) {
 
 fun main() {
 
-    val day1 = Weather(293, 253, false)
+    val day1 = Weather04(293, 253, false)
 
 }
