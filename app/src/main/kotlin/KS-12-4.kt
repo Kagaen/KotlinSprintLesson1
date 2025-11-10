@@ -1,12 +1,12 @@
-class Weather04 (_dayTemp: Int, _nightTemp: Int, _rainfall: Boolean) {
+class Weather04(_dayTemp: Int, _nightTemp: Int, _rainfall: Boolean) {
     val toCelsius = 273
     var dayTemp = _dayTemp - toCelsius
     var nightTemp = _nightTemp - toCelsius
-    var rainfall = _rainfall
+    var rainfall = if (_rainfall) "Да" else "Нет"
+
     init {
         println("$dayTemp\n$nightTemp\n$rainfall")
     }
-
 }
 
 fun main() {
