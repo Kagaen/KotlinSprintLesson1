@@ -1,13 +1,8 @@
 class Mobile(
     val number: Long,
     val name: String,
-) {
-    constructor(
-        number: Long,
-        name: String,
-        company: String?,
-    ) : this(number, name)
-}
+    val company: String?,
+)
 
 fun main() {
     val mobile1 = Mobile(64555, "sad")
