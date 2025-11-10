@@ -1,10 +1,10 @@
 class Weather04 (_dayTemp: Int, _nightTemp: Int, _rainfall: Boolean) {
-    var dayTemp = _dayTemp
-    var nightTemp = _nightTemp
-    var rainfall = _rainfall
     val toCelsius = 273
+    var dayTemp = _dayTemp - toCelsius
+    var nightTemp = _nightTemp - toCelsius
+    var rainfall = _rainfall
     init {
-        println("${dayTemp - toCelsius}\n${nightTemp - toCelsius}\n$rainfall")
+        println("$dayTemp\n$nightTemp\n$rainfall")
     }
 
 }
