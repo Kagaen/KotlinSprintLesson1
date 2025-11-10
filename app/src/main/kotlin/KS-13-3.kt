@@ -5,6 +5,7 @@ class Contact(
 )
 
 fun main() {
+
     val listOfContacts: List<Contact> = listOf(
         Contact(89451674589, "Олег"),
         Contact(84621264789, "Александр", "null"),
@@ -12,9 +13,6 @@ fun main() {
         Contact(89124826545, "Изя", "Кашерные дела"),
         Contact(89324957825, "Владимир", "Администрация")
     )
-    val listOfCompany= mutableListOf<String>()
-    for (contact in listOfContacts){
-        if (contact.company != null) listOfCompany.add(contact.company!!)
-    }
+    val listOfCompany = listOfContacts.mapNotNull { list -> list.company }
     println(listOfCompany)
 }
