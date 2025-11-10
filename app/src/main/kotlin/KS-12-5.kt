@@ -5,7 +5,7 @@ const val KELVIN_TO_CELSIUS = 273
 class Weather05(_dayTemp: Int, _nightTemp: Int, _rainfall: Boolean) {
     var dayTemp = _dayTemp - KELVIN_TO_CELSIUS
     var nightTemp = _nightTemp - KELVIN_TO_CELSIUS
-    var rainfall = _rainfall
+    var rainfall = if (_rainfall) "Да" else "Нет"
 
     init {
         println(" $dayTemp   $nightTemp   $rainfall")
@@ -31,7 +31,7 @@ fun main() {
 
     val averageDayTemp = listOfDays.map { it.dayTemp }.average()
     val averageNightTemp = listOfDays.map { it.nightTemp }.average()
-    val rainfallDayCount = listOfDays.count { it.rainfall }
+    val rainfallDayCount = listOfDays.count { it.rainfall == "Да" }
 
     println("\nСредняя дневная температура: ${"%.1f".format(averageDayTemp)}\n" +
             "Средняя ночная температура: ${"%.1f".format(averageNightTemp)}\n" +
