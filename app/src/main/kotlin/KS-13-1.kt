@@ -1,7 +1,7 @@
 class Mobile(
     val number: Long,
     val name: String,
-    val company: String?,
+    val company: String? = null,
 )
 
 fun main() {
