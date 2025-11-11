@@ -8,7 +8,7 @@ data class Contact2(
         try {
             val number = readln().toLong()
         } catch (e: Exception) {
-            println("Ошибка: ${e.message}")
+            println("Ошибка: ${e::class.simpleName}")
         }
         print("Имя: ")
         val name: String = readln()
