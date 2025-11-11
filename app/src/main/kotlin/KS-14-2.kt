@@ -6,10 +6,13 @@ fun main() {
 
     goodWay.showShipProp()
     goodWay.gangway()
+    println()
     unstoppable.showShipProp()
     unstoppable.openAftGate()
+    println()
     magdalena.showShipProp()
     magdalena.craneActivate()
+    magdalena.gangway()
 
 }
 
