@@ -12,20 +12,24 @@ fun main() {
     println()
     magdalena.showShipProp()
     magdalena.craneActivate()
-    magdalena.gangway()
 
 }
 
-open class Liner1(
-    val speed: Int = 100,
-    val capacity: Int = 1000,
-    val tonnage: Int = 200,
+open class Ship(
+    val speed: Int,
+    val capacity: Int,
+    val tonnage: Int,
     val breakIceAbility: Boolean = false,
 ) {
     fun showShipProp() {
         println("$speed\n$capacity\n$tonnage\n$breakIceAbility")
     }
+}
 
+class Liner1(
+    speed: Int = 100,
+    capacity: Int = 1000,
+): Ship(speed, capacity, tonnage = 200,) {
     fun gangway() {
         println("Выдвигаем трап со шкафута")
     }
@@ -36,7 +40,7 @@ class Icebreaker1(
     speed: Int = 50,
     capacity: Int = 100,
     breakIceAbility: Boolean = true,
-) : Liner1(speed, capacity, tonnage = 400, breakIceAbility) {
+) : Ship(speed, capacity, tonnage = 400, breakIceAbility) {
     fun openAftGate() {
         println("Кормовые ворота открыты")
     }
@@ -46,7 +50,7 @@ class Icebreaker1(
 class Cargo1(
     speed: Int = 70,
     capacity: Int = 50,
-) : Liner1(speed, capacity, tonnage = 2000) {
+) : Ship(speed, capacity, tonnage = 2000) {
     fun craneActivate() {
         println("Погрузочный кран активирован")
     }
