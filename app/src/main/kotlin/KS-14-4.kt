@@ -5,17 +5,19 @@ fun main() {
         hasAtmosphere = true,
         suitableForLanding = false,
     )
-    val satellite1 = planet1.Satellite(
+    val satellite1 = Satellite(
         name = "Pandora",
         hasAtmosphere = true,
         suitableForLanding = true,
+        planet1,
     )
-    val satellite2 = planet1.Satellite(
+    val satellite2 = Satellite(
         name = "SmallColdRock",
         hasAtmosphere = false,
         suitableForLanding = false,
+        planet1,
     )
-    println("${planet1.name}: "+ planet1.listOfSatellite.joinToString(", ") { it.name })
+    println("${planet1.name}: " + planet1.listOfSatellite.joinToString(", ") { it.name })
 
 }
 
@@ -31,15 +33,15 @@ class Planet(
     suitableForLanding: Boolean,
 ) : SpaceBody(name, hasAtmosphere, suitableForLanding) {
     val listOfSatellite: MutableList<Satellite> = mutableListOf()
-
-    inner class Satellite(
-        name: String,
-        hasAtmosphere: Boolean,
-        suitableForLanding: Boolean,
-    ) : SpaceBody(name, hasAtmosphere, suitableForLanding) {
-        init {
-            listOfSatellite.add(this)
-        }
-    }
 }
 
+class Satellite(
+    name: String,
+    hasAtmosphere: Boolean,
+    suitableForLanding: Boolean,
+    planet: Planet,
+) : SpaceBody(name, hasAtmosphere, suitableForLanding) {
+    init {
+        planet.listOfSatellite.add(this)
+    }
+}
