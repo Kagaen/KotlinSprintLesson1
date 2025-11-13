@@ -3,6 +3,7 @@ fun main() {
     val user1 = UserKS153(1, "Potato")
     val admin1 = AdminKS153(2, "KS")
     user1.sendMessage()
+    admin1.sendMessage()
     admin1.deleteMessage()
     admin1.deleteUser()
 }
@@ -15,7 +16,11 @@ abstract class UsersAndAdmins() {
 class AdminKS153(
     override val id: Int,
     override val name: String,
-) : UsersAndAdmins(), AdminMoves {
+) : UsersAndAdmins(), UserMoves, AdminMoves {
+
+    override fun sendMessage() {
+        println("$name отправил сообщение")
+    }
 
     override fun deleteMessage() {
         println("Администратор удалил сообщение")
