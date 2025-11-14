@@ -1,51 +1,48 @@
 fun main() {
 
-    val user1 = UserKS153(1, "Potato")
+    val user1 = RegularUserKS153(1, "Potato")
     val admin1 = AdminKS153(2, "KS")
+
+    user1.readForum()
     user1.sendMessage()
+    admin1.readForum()
     admin1.sendMessage()
     admin1.deleteMessage()
     admin1.deleteUser()
 }
 
-abstract class UsersAndAdmins() {
+abstract class UserKS153 {
     abstract val id: Int
     abstract val name: String
+
+    fun sendMessage() {
+        println("$name отправил сообщение")
+    }
+
+    fun readForum() {
+        println("$name зашёл на форум. Что-то читает")
+    }
 }
 
 class AdminKS153(
     override val id: Int,
     override val name: String,
-) : UsersAndAdmins(), UserMoves, AdminMoves {
+) : UserKS153() {
 
-    override fun sendMessage() {
-        println("$name отправил сообщение")
-    }
-
-    override fun deleteMessage() {
+    fun deleteMessage() {
         println("Администратор удалил сообщение")
     }
 
-    override fun deleteUser() {
+    fun deleteUser() {
         println("Пользователь удалён администрацией")
     }
 }
 
-class UserKS153(
+class RegularUserKS153(
     override val id: Int,
     override val name: String,
-) : UsersAndAdmins(), UserMoves {
+) : UserKS153()
 
-    override fun sendMessage() {
-        println("$name отправил сообщение")
-    }
-}
 
-interface UserMoves {
-    fun sendMessage()
-}
 
-interface AdminMoves {
-    fun deleteMessage()
-    fun deleteUser()
-}
+
