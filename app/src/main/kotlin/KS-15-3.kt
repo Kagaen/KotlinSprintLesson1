@@ -11,9 +11,10 @@ fun main() {
     admin1.deleteUser()
 }
 
-abstract class UserKS153 {
-    abstract val id: Int
-    abstract val name: String
+abstract class UserKS153(
+    val id: Int,
+    val name: String,
+) {
 
     fun sendMessage() {
         println("$name отправил сообщение")
@@ -25,9 +26,9 @@ abstract class UserKS153 {
 }
 
 class AdminKS153(
-    override val id: Int,
-    override val name: String,
-) : UserKS153() {
+    id: Int,
+    name: String,
+) : UserKS153(id, name) {
 
     fun deleteMessage() {
         println("Администратор удалил сообщение")
@@ -39,10 +40,6 @@ class AdminKS153(
 }
 
 class RegularUserKS153(
-    override val id: Int,
-    override val name: String,
-) : UserKS153()
-
-
-
-
+    id: Int,
+    name: String,
+) : UserKS153(id, name)
