@@ -6,6 +6,6 @@ fun main() {
 }
 
 class Kubik {
-    val digit = (0..6).random()
+    private val digit = (0..6).random()
     fun getKubik() = println("Выпало $digit")
 }
