@@ -5,10 +5,12 @@ fun main() {
 class Order164 {
     val numberOfOrder = 456
     private var statusOrder = ""
-    fun changeStatus(newStatus: String){
+    private fun changeStatus(newStatus: String) {
         statusOrder = newStatus
         println(statusOrder)
     }
+
+    fun manageOrder(newStatus: String) = changeStatus(newStatus)
 }
 
-fun requestKS164(newStatus: String) = Order164().changeStatus(newStatus)
+fun requestKS164(newStatus: String) = Order164().manageOrder(newStatus)
