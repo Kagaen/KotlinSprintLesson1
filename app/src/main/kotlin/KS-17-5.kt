@@ -1,30 +1,25 @@
 fun main() {
 
-    val user = UserKS175()
+    val user = UserKS175("user1234578", "qwert")
     println(user.toString())
-    user.changePassword("sadfr456")
-    user.changeLogin("Kagaen")
+    user.login = "Kagaen"
+    user.password = "qrws24f3w"
     println(user.toString())
 
 }
 
-private class UserKS175 {
-    var login = "user450078"
+private class UserKS175(
+    login: String,
+    password: String
+) {
+    var login = login
         set(value) {
             field = value
             println("Логин успешно изменён")
         }
-    var password = "qwerty"
+    var password = password
         get() = "*".repeat(field.length)
         set(value) = println("Вы не можете изменить пароль")
-
-    fun changeLogin(newLogin: String) {
-        login = newLogin
-    }
-
-    fun changePassword(newPassword: String) {
-        password = newPassword
-    }
 
     override fun toString() = "login - $login, password - $password"
 
