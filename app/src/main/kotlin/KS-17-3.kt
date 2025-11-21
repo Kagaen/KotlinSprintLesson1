@@ -16,7 +16,6 @@ class FileKS173(
     val fileCount = fileCount
         get() = if (secret) 0 else field
 
-    override fun toString(): String {
-        return "Название = $name, файлов = $fileCount"
-    }
+    override fun toString() = "$name, $fileCount файлов"
+
 }
