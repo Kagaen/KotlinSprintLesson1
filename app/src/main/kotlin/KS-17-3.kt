@@ -1,20 +1,21 @@
 fun main() {
 
-    val secretFile = FileKS173("Не открывать!", 50, true)
-    val file = FileKS173("Public", 100, false)
+    val secretFile = FolderKS173("Не открывать!", 50, true)
+    val file = FolderKS173("Public", 100, false)
     println(secretFile.toString())
     println(file.toString())
+
 }
 
-class FileKS173(
+class FolderKS173(
     name: String,
     fileCount: Int,
-    val secret: Boolean
+    private val isSecret: Boolean
 ) {
     val name = name
-        get() = if (secret) "Скрытая папка" else field
+        get() = if (isSecret) "Скрытая папка" else field
     val fileCount = fileCount
-        get() = if (secret) 0 else field
+        get() = if (isSecret) 0 else field
 
     override fun toString() = "$name, $fileCount файлов"
 
