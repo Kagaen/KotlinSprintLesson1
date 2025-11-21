@@ -9,7 +9,7 @@ class Quiz(
     var ask = _ask
         get() = field
         set(value: String) {
-            ask = value
+            field = value
         }
 }
 
