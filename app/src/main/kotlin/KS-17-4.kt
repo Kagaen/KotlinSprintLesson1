@@ -13,8 +13,9 @@ class Package(
     var moveCount = 0
     var location = _location
         set(value) {
+            field = value
             moveCount++
-            println("$moveCount - $value")
+            println("$moveCount - $field")
         }
 
     fun moveTo(loc: String) {
