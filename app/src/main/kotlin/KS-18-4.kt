@@ -1,5 +1,5 @@
 abstract class Package184 {
-    open fun packageArea() = 0
+    abstract fun packageArea(): Int
 }
 
 private class CubeBox(val edge: Int) : Package184() {
