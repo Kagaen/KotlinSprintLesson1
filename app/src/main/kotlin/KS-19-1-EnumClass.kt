@@ -1,10 +1,10 @@
-private enum class Fish {
-    Guppy,
-    Angelfish,
-    Goldfish,
-    SiameseFightingFish
+enum class Fish(val rusName: String) {
+    GUPPY("Гуппи"),
+    ANGELFISH("Скалярия"),
+    GOLDFISH("Золотая рыбка"),
+    SIAMESE_FIGHTING_FISH("Петушок"),
 }
 
 fun main() {
-    println(Fish.entries.joinToString())
+    Fish.entries.forEach { println(it.rusName) }
 }
