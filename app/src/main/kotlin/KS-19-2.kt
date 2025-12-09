@@ -1,35 +1,30 @@
-private enum class Goods {
-    Clothes {
-        override fun getName() = this.name
-    },
-    OfficeSupplies {
-        override fun getName() = this.name
-    },
-    Others {
-        override fun getName() = this.name
-    };
+enum class CategoryKS192(val nameCategory: String) {
+    CLOTHING("Одежда"),
+    OFFICE_SUPPLIES("Канцтовары"),
+    OTHER("Разное");
 
-    abstract fun getName(): String
+    fun getName() = when (this) {
+        CLOTHING -> CLOTHING.nameCategory
+        OFFICE_SUPPLIES -> OFFICE_SUPPLIES.nameCategory
+        OTHER -> OTHER.nameCategory
+    }
 }
 
 private class Product(
     val name: String,
     val id: Int,
-    val category: Goods,
+    val category: CategoryKS192,
 ) {
-    init {
-        listOfProducts.add(this)
-    }
-
-    fun getInfo() = println("Название: $name\nНомер: $id\nТип: ${category.getName()}\n")
+    fun getInfo() = "Название: $name\nНомер: $id\nКатегория: ${category.getName()}\n"
 }
-
-private val listOfProducts = mutableListOf<Product>()
 
 fun main() {
 
-    Product("Scarf", 1, Goods.Clothes)
-    Product("Pen", 23, Goods.OfficeSupplies)
-    Product("Toy", 45, Goods.Others)
-    listOfProducts.forEach { it.getInfo() }
+    val listOfProducts = mutableListOf<Product>()
+
+    listOfProducts.add(Product("Шарф", 1, CategoryKS192.CLOTHING))
+    listOfProducts.add(Product("Ручка", 23, CategoryKS192.OFFICE_SUPPLIES))
+    listOfProducts.add(Product("Игрушка", 45, CategoryKS192.OTHER))
+
+    listOfProducts.forEach { println(it.getInfo()) }
 }
