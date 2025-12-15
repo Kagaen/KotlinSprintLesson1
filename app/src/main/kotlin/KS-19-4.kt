@@ -8,14 +8,14 @@ enum class Ammunition(
 }
 
 private class Tank {
-    var cartridge: Int? = null
+    var cartridge: Ammunition? = null
     fun changeAmmunition(ammunition: Ammunition) {
-        cartridge = ammunition.damage
-        println("Заряжен ${ammunition.color} снаряд")
+        cartridge = ammunition
+        println("Заряжен ${cartridge!!.color} снаряд")
     }
 
     fun shot() {
-        println(cartridge?.let { "Выстрел на $it урона" } ?: "Пушка не заряжена")
+        println(cartridge?.let { "Выстрел на ${it.damage} урона" } ?: "Пушка не заряжена")
         cartridge = null
     }
 }
